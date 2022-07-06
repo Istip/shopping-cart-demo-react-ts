@@ -1,4 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 module.exports = {
   entry: './src/index.tsx',
   devtool: 'eval-source-map',
@@ -12,6 +14,13 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          { loader: 'css-loader', options: { modules: true } },
+        ],
+      },
     ],
   },
   plugins: [
@@ -19,5 +28,6 @@ module.exports = {
       template: './src/index.html',
       filename: 'index.html',
     }),
+    new MiniCssExtractPlugin(),
   ],
 };
