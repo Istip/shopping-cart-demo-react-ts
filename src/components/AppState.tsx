@@ -1,11 +1,5 @@
 import React, { createContext, useContext, useEffect, useReducer } from 'react';
-
-interface CartItem {
-  id: number;
-  name: string;
-  price: number;
-  quantity: number;
-}
+import { CartItem } from '../data/types';
 
 interface AppStateValue {
   cart: {
