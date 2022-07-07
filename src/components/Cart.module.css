@@ -4,7 +4,7 @@
 }
 
 .cartDropDown {
-  background: white;
+  background: #fff;
   box-shadow: 0 1px 7px rgba(0, 0, 0, 0.2);
   position: absolute;
   left: 50%;
@@ -21,8 +21,10 @@
 }
 
 .cartDropDown li {
-  border-bottom: 1px solid #ccc;
-  padding: 5px 0;
+  background: #fff;
+
+  border-bottom: 1px solid #e4e8f1;
+  padding: 10px;
 }
 
 .cartDropDown li:last-child {
