@@ -1,15 +1,20 @@
 .cartContainer {
   display: inline-block;
   position: relative;
+  padding: 30px;
 }
 
 .cartDropDown {
-  box-shadow: 0 1px 7px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   width: 200px;
-  text-align: left;
+  z-index: 2;
+  padding: 20px;
+  border-radius: 12px;
 }
 
 .cartDropDown ul {

@@ -14,11 +14,16 @@ const Offer: React.FC<Props> = ({ pizza, addToCart }) => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.offer}>
+        <small>Special offer</small>
+      </div>
       <h2>{pizza.name}</h2>
       <p>{pizza.description}</p>
-      <p>${pizza.price}</p>
+      <p>$ {pizza.price}</p>
 
-      <button onClick={handleAddToCart}>Add to Cart</button>
+      <button className={styles.btnOffer} onClick={handleAddToCart}>
+        Add to Cart
+      </button>
     </div>
   );
 };

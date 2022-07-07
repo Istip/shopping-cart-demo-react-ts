@@ -15,9 +15,11 @@ const Pizza: React.FC<Props> = ({ pizza, addToCart }) => {
     <li className={styles.container}>
       <h2>{pizza.name}</h2>
       <p>{pizza.description}</p>
-      <p>${pizza.price}</p>
+      <p>$ {pizza.price}</p>
 
-      <button onClick={handleAddToCart}>Add to Cart</button>
+      <button className={styles.btnPrimary} onClick={handleAddToCart}>
+        Add to Cart
+      </button>
     </li>
   );
 };

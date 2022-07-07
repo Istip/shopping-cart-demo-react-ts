@@ -1,9 +1,41 @@
 .container {
-  border: 1px solid tomato;
-  margin: 0 0 30px;
-  padding: 10px;
+  border: 1px solid #ff6347;
+  background-color: #ff634733;
+  margin: 0 0 10px;
+  border-radius: 24px;
+  padding: 40px 20px 20px 20px;
+  list-style: none;
+  position: relative;
+}
+
+.offer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #ff6347;
+  color: #fff;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 0 20px 0 0;
+  z-index: 1;
 }
 
 .container h2 {
   margin: 0 0 10px;
+}
+
+.btnOffer {
+  all: unset;
+  cursor: pointer;
+  border: 1px solid #ff6347;
+  background-color: #ff6347;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  transition: 250ms ease;
+}
+
+.btnOffer:hover {
+  background-color: #e25840;
+  border: 1px solid #e25840;
 }

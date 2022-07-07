@@ -1,7 +1,9 @@
 .container {
-  border: 1px solid burlywood;
+  border: 1px solid #ddd;
+  background-color: #fff;
   margin: 0 0 10px;
-  padding: 10px;
+  border-radius: 24px;
+  padding: 40px 20px 20px 20px;
   list-style: none;
 }
 
@@ -9,6 +11,17 @@
   margin: 0 0 10px;
 }
 
-.container p {
-  margin-bottom: 0;
+.btnPrimary {
+  all: unset;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  transition: 250ms ease;
+}
+
+.btnPrimary:hover {
+  background-color: #ccc;
+  border: 1px solid #ccc;
 }
