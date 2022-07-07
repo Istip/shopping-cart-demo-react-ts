@@ -4,17 +4,16 @@
 }
 
 .cartDropDown {
-  background: #fff;
   box-shadow: 0 1px 7px rgba(0, 0, 0, 0.2);
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  padding: 10px;
   width: 200px;
   text-align: left;
 }
 
 .cartDropDown ul {
+  background: #fff;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -22,7 +21,6 @@
 
 .cartDropDown li {
   padding: 10px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;

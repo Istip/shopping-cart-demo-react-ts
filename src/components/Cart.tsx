@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CartIcon from '../assets/Cart.icon';
-import { AppSetStateContext, AppStateContext } from './AppState';
+import { AppStateContext } from './AppState';
 import styles from './Cart.module.css';
 
 interface Props {}
@@ -26,11 +26,15 @@ class Cart extends Component<Props, State> {
     return (
       <AppStateContext.Consumer>
         {(state) => {
+          const totalPizzas = state.cart.items.reduce((acc, item) => {
+            return acc + item.quantity;
+          }, 0);
+
           return (
             <div className={styles.cartContainer}>
               <h1>Cart</h1>
               <button className={styles.button} onClick={this.handleToggle}>
-                <CartIcon /> <span>{state.cart.items.length} pizza(s)</span>
+                <CartIcon /> <span>{totalPizzas} pizza(s)</span>
               </button>
 
               {this.state.isOpen && (
@@ -39,7 +43,7 @@ class Cart extends Component<Props, State> {
                     {state.cart.items.map((item) => (
                       <li key={item.id}>
                         <div>{item.name}</div>
-                        <div>✖ {item.quantity}</div>
+                        <div> &times; {item.quantity}</div>
                       </li>
                     ))}
                   </ul>

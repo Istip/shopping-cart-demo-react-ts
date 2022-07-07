@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Pizza.module.css';
-import { useSetState } from './AppState';
+import { useStateDispatch } from './AppState';
 
 interface Pizza {
   id: number;
@@ -14,39 +14,17 @@ interface Props {
 }
 
 const Pizza: React.FC<Props> = ({ pizza }) => {
-  const setState = useSetState();
+  const dispatch = useStateDispatch();
   const handleAddToCart = () => {
-    setState((prevState) => {
-      const pizzaExists = prevState.cart.items.find(
-        (item) => item.id === pizza.id
-      );
-
-      return {
-        ...prevState,
-        cart: {
-          ...prevState.cart,
-          items: pizzaExists
-            ? prevState.cart.items.map((item) => {
-                if (item.id === pizza.id) {
-                  return {
-                    ...item,
-                    quantity: item.quantity + 1,
-                  };
-                }
-                return item;
-              })
-            : [
-                ...prevState.cart.items,
-                // The new item is added here below to the list
-                {
-                  id: pizza.id,
-                  name: pizza.name,
-                  price: pizza.price,
-                  quantity: 1,
-                },
-              ],
+    dispatch({
+      type: 'ADD_TO_CART',
+      payload: {
+        item: {
+          id: pizza.id,
+          name: pizza.name,
+          price: pizza.price,
         },
-      };
+      },
     });
   };
 
