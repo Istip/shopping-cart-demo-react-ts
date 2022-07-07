@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import CartIcon from '../assets/Cart.icon';
 import styles from './Cart.module.css';
 
@@ -8,7 +8,7 @@ interface State {
   isOpen: boolean;
 }
 
-class Cart extends React.Component<Props, State> {
+class Cart extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
 
@@ -17,15 +17,16 @@ class Cart extends React.Component<Props, State> {
     };
   }
 
+  handleToggle = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    this.setState((prevState) => ({ isOpen: !prevState.isOpen }));
+  };
+
   render() {
     return (
       <div className={styles.cartContainer}>
         <h1>Cart</h1>
-        <button
-          className={styles.button}
-          onClick={() => this.setState({ isOpen: !this.state.isOpen })}
-        >
-          <CartIcon /> 2 pizzas
+        <button className={styles.button} onClick={this.handleToggle}>
+          <CartIcon /> <span>2 pizzas</span>
         </button>
 
         {this.state.isOpen && (
