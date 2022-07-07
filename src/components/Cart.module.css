@@ -10,7 +10,7 @@
   left: 50%;
   transform: translateX(-50%);
   padding: 10px;
-  width: 140px;
+  width: 200px;
   text-align: left;
 }
 
@@ -21,10 +21,11 @@
 }
 
 .cartDropDown li {
-  background: #fff;
-
-  border-bottom: 1px solid #e4e8f1;
   padding: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .cartDropDown li:last-child {
